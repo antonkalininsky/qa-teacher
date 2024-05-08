@@ -18,14 +18,22 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={inter.className}>
-        <div>
-          header
-        </div>
-        <div>
-          nav
-        </div>
-        <div>
-          {children}
+        <div className={styles.main}>
+          <div className={styles.header}>
+            QA teacher
+          </div>
+          <div className={styles.navigation}>
+            <div>nav item 1</div>
+            <div>nav item 1</div>
+            <div>nav item 1</div>
+            <div>nav item 1</div>
+            <div>nav item 1</div>
+            <div>nav item 1</div>
+            <div>nav item 1</div>
+          </div>
+          <div className={styles.content}>
+            {children}
+          </div>
         </div>
       </body>
     </html>
