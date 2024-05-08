@@ -1,7 +1,11 @@
 .title {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 .description {
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
+}
+.inputArea {
+  background-color: lightblue;
+  padding: 1rem;
 }
