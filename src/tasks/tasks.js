@@ -1,49 +1,50 @@
 const tasksList = [
   {
     id: 0,
-    title: "Task 1",
+    title: "Тест 1 - регистрация",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi quas dolores qui aliquam facilis error amet, quia quae, doloribus sit quod temporibus quasi sed praesentium asperiores ipsum architecto nostrum maiores!",
-    taskData: [
-      {
-        title: "Название кейса",
-        text: "Проверка формы регистрации пользователя",
-      },
-      {
-        title: "Предварительное условие",
-        text: "Пустые поля формы",
-      },
-      {
-        title: "Шаги выполнения",
-        list: ["бегит", "анжумания", "штанга", "лол", "кек", "лмао"],
-      },
-      {
-        title: "Тестовые данные",
-        list: [
-          "Имя: Иван",
-          "Фамилия: Иван",
-          "Логин: Иван",
-          "Пароль: Иван",
-          "Повторите пароль: Иван",
-        ],
-      },
-      {
-        title: "Ожидаемый результат",
-        text: "Сообщение об успешной регистрации пользователя",
-      },
-    ],
-  },
-  {
-    id: 1,
-    title: "Task 2",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi quas dolores qui aliquam facilis error amet, quia quae, doloribus sit quod temporibus quasi sed praesentium asperiores ipsum architecto nostrum maiores!",
-  },
-  {
-    id: 2,
-    title: "Task 3",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi quas dolores qui aliquam facilis error amet, quia quae, doloribus sit quod temporibus quasi sed praesentium asperiores ipsum architecto nostrum maiores!",
+      "Проверка что пользователь может успешно зарегестрироваться использовуя указанную форму",
+    testData: {
+      title: "Проверка формы регистрации пользователя",
+      prerequisites: "нет",
+      procedure: [
+        "Введите имя",
+        "Введите фамилию",
+        "Введите логин",
+        "Введите пароль",
+        "Введите пароль повторно",
+        "Нажмите кнопку 'Регистрация'",
+      ],
+      testData: [
+        "Имя: Иван",
+        "Фамилия: Иванов",
+        "Логин: user",
+        "Пароль: password",
+      ],
+      expectedResult: "Сообщение об успешной регистрации пользователя",
+      createdAt: "8.05.2024",
+      createdBy: "Anton",
+      lastCheckedAt: true,
+      lastCheckedBy: true,
+      lastCheckedStatus: true,
+    },
+    testAnswer: {
+      name: "name",
+      surname: "surname",
+      login: "login",
+      password: "password",
+      submitted: true,
+      validated: true,
+    },
+    docAnswer: {
+      lastCheckedAt: true,
+      lastCheckedBy: true,
+      lastCheckedStatus: true,
+    },
+    testComponent: {
+      component: "registerForm",
+      varaiant: 1,
+    },
   },
 ];
 
