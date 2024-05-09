@@ -1,28 +1,44 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import styles from "./styles.module.css";
-import { TextField } from "@mui/material";
+import { TextField, Button } from "@mui/material";
+import { docFieldsMap, docFieldFormatter } from "@/utils/dictionatyMaps";
 
 export default function Intruction({ data }) {
   const instructionList = useMemo(() => {
-    if ("taskData" in data) {
-      return data.taskData.map((taskItem) => {
-        if ("list" in taskItem) {
-          return <div key={taskItem.title}>{taskItem.title}</div>;
-        } else {
-          return <div key={taskItem.title}>{taskItem.title}</div>;
-        }
+    console.log(data);
+    if (data?.testData) {
+      return Object.keys(data.testData).map((key) => {
+        return (
+          <div key={key} className={styles.instructionLine}>
+            <div className={styles.instructionHead}>{docFieldsMap[key]}</div>
+            {docFieldFormatter?.[key](data.testData[key])}
+          </div>
+        );
       });
     }
     return;
+
+    // if ("taskData" in data) {
+    //   return data.taskData.map((item) => {
+    //     return <div>{docFieldsMap[item.]}</div>;
+    //   });
+    // }
+    // return;
   }, [data]);
   return (
-    <div className={styles.instructionForm}>
-      {instructionList}
-      {/* <div className={styles.instructionHead}>Название кейса</div>
+    <div>
+      <div className={styles.instructionForm}>
+        {instructionList}
+        {/* <div className={styles.instructionHead}>Название кейса</div>
       <div>Проверка формы регистрации пользователя</div> */}
-      {/* <div className={styles.instructionHead}>header 2</div>
+        {/* <div className={styles.instructionHead}>header 2</div>
       <div>
         <TextField />
+      </div> */}
+      </div>
+      {/* <div>
+        <Button>test</Button>
+        <Button>test</Button>
       </div> */}
     </div>
   );
