@@ -1,41 +1,44 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import styles from "./styles.module.css";
-import { TextField, Button } from "@mui/material";
 import { docFieldsMap, docFieldFormatter } from "@/utils/dictionatyMaps";
 
 export default function Intruction({ data }) {
+  const [inputs, setInputs] = useState({});
+
+  useEffect(() => {
+    if (data?.testDataFormatters) {
+      Object.keys(data.testDataFormatters).forEach((key) => {});
+    } else {
+      setInputs({});
+    }
+  }, [data]);
+
   const instructionList = useMemo(() => {
     console.log(data);
-    if (data?.testData) {
-      return Object.keys(data.testData).map((key) => {
+    if (data?.testDataFormatters) {
+      const result = [];
+      return Object.keys(data.testDataFormatters).map((key) => {
+        let field;
+        const localKey = data.testDataFormatters[key];
+        const args = [];
+        if (localKey === "inputText") {
+          setInputs({ ...inputs, [key]: "" });
+        }
+        field = docFieldFormatter[localKey](data.testData[key], ...args);
+
         return (
           <div key={key} className={styles.instructionLine}>
             <div className={styles.instructionHead}>{docFieldsMap[key]}</div>
-            {docFieldFormatter?.[key](data.testData[key])}
+            {field}
           </div>
         );
       });
     }
     return;
-
-    // if ("taskData" in data) {
-    //   return data.taskData.map((item) => {
-    //     return <div>{docFieldsMap[item.]}</div>;
-    //   });
-    // }
-    // return;
-  }, [data]);
+  }, [data, ...Object.values(inputs)]);
   return (
     <div>
-      <div className={styles.instructionForm}>
-        {instructionList}
-        {/* <div className={styles.instructionHead}>Название кейса</div>
-      <div>Проверка формы регистрации пользователя</div> */}
-        {/* <div className={styles.instructionHead}>header 2</div>
-      <div>
-        <TextField />
-      </div> */}
-      </div>
+      <div className={styles.instructionForm}>{instructionList}</div>
       {/* <div>
         <Button>test</Button>
         <Button>test</Button>

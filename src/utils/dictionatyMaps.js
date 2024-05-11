@@ -1,7 +1,19 @@
-import { TextField } from "@mui/material";
+const selectInputFormatter = (value, setter, options) => (
+  <select id="cars" value={value} onChange={(e) => setter(e.target.value)}>
+    {options?.map((item) => (
+      <option key={item.value} value={item.value}>
+        {item.title}
+      </option>
+    ))}
+  </select>
+);
+
+const dateInputFormatter = (value, setter) => (
+  <input type="date" value={value} onChange={(e) => setter(e.target.value)} />
+);
 
 const textInputFormatter = (value, setter) => (
-  <TextField value={value} onChange={(e) => setter(e.target.value)} />
+  <input type="text" value={value} onChange={(e) => setter(e.target.value)} />
 );
 
 const textFormatter = (value) => <div>{value}</div>;
@@ -15,17 +27,11 @@ const listFormatter = (value) => (
 );
 
 const docFieldFormatter = {
-  title: textFormatter,
-  prerequisites: textFormatter,
-  procedure: listFormatter,
-  testData: listFormatter,
-  expectedResult: textFormatter,
-  createdAt: textFormatter,
-  createdBy: textFormatter,
-  notes: textFormatter,
-  lastCheckedAt: textFormatter,
-  lastCheckedBy: textInputFormatter,
-  lastCheckedStatus: textFormatter,
+  text: textFormatter,
+  list: listFormatter,
+  inputText: textInputFormatter,
+  inputDate: dateInputFormatter,
+  inputSelect: selectInputFormatter,
 };
 
 const docFieldsMap = {

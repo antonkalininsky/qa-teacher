@@ -1,35 +1,35 @@
 .main {
-    position: relative;
+  position: relative;
 }
 
 .header {
-    width: 100vw;
-    font-size: 2rem;
-    font-weight: bold;
-    background-color: wheat;
-    padding: 1rem 2rem;
-    height: 4.5rem;
-    border-bottom: 1px solid black;
+  width: 100vw;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: wheat;
+  padding: 1rem 2rem;
+  height: 4.5rem;
+  border-bottom: 1px solid black;
 }
 
 .navigation {
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    top: 4.5rem;
-    border-right: 1px solid black;
-    width: 15rem;
-    padding: 1rem 1rem 1rem 2rem;
-    font-size: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 4.5rem;
+  border-right: 1px solid black;
+  width: 15rem;
+  padding: 1rem 1rem 1rem 2rem;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }
 
 .content {
-    margin-left: 15rem;
-    width: calc(100% - 15rem);
-    height: calc(100vh - 4.5rem);
-    padding: 1rem;
+  /* margin-left: 15rem; */
+  width: calc(100% - 15rem);
+  height: calc(100vh - 4.5rem);
+  padding: 1rem;
 }

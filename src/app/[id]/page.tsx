@@ -15,16 +15,16 @@ export default function Test({ params }: { params: { id: number } }) {
 
   return (
     <div>
-      <Box className={styles.title}>{currentTask?.title}</Box>
+      {/* <Box className={styles.title}>{currentTask?.title}</Box>
       <Box className={styles.description}>{currentTask?.description}</Box>
       <Grid container spacing={4}>
         <Grid item xs={6}>
           <TrainingForm />
         </Grid>
-        <Grid item xs={6}>
-          <Instruction data={currentTask} />
-        </Grid>
-      </Grid>
+        <Grid item xs={6}> */}
+      <Instruction data={currentTask} />
+      {/* </Grid>
+      </Grid> */}
     </div>
   );
 }

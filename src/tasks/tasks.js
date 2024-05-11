@@ -28,6 +28,18 @@ const tasksList = [
       lastCheckedBy: true,
       lastCheckedStatus: true,
     },
+    testDataFormatters: {
+      title: "text",
+      prerequisites: "text",
+      procedure: "list",
+      testData: "list",
+      expectedResult: "text",
+      createdAt: "text",
+      createdBy: "text",
+      lastCheckedAt: "inputDate",
+      lastCheckedBy: "inputText",
+      lastCheckedStatus: "inputSelect",
+    },
     testAnswer: {
       name: "name",
       surname: "surname",
